@@ -1,7 +1,7 @@
 # AFEXplorer
 
 AFEXplorer (AFEX) is a generic approach that tailors AlphaFold predictions to user-defined constraints in coarse coordinate spaces by optimizing embedding features.
-It has been demonstrated to be effective in predicting alternative structures of proteins with large conformational changes, such as adenylate kinase (AdK), human kinases, and membrane transporters.
+It has been demonstrated to be effective in predicting alternative structures of proteins conditioned by local or global structure features for human kinases and membrane transporters.
 
 
 ## Installation
