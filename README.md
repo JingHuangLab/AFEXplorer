@@ -1,8 +1,9 @@
 # AFEXplorer
 
 AFEXplorer (AFEX) is a generic approach that tailors AlphaFold predictions to user-defined constraints in coarse coordinate spaces by optimizing embedding features.
-It has been demonstrated to be effective in predicting alternative structures of proteins conditioned by local or global structure features for human kinases and membrane transporters.
+It has been demonstrated to be effective in predicting protein alternative conformations conditioned by local or global structure features for human kinases and membrane transporters.
 
+Lead developer: [Zilin Song](https://github.com/ZL-Song) (song.zilin@outlook.com)
 
 ## Installation
 
@@ -12,17 +13,13 @@ chex
 optax
 ```
 
-### Kincore-standalone is also required when predicting human kinases.
-
-Simply, `hmmer` needs to be installed in the current environment to support Kincore. See [Kincore-standalone](https://github.com/vivekmodi/Kincore-standalone) for more info.
-
-## Use AFEX for alternative structure prediction
+## Usage of AFEX: AdK protein as an example
 
 1. Prepare input.
 
     Run AlphaFold for `features.pkl`, which is the input of AFEX.
 
-2. Take AdK as an example.
+2. Conditioned structure prediction.
    * Add corresponding CV loss for the open state in `afexplore_optim.py`.
    * Set the directory of AF model parameters as $AF_PARAM.
    * Run AFEX.
@@ -34,10 +31,15 @@ Simply, `hmmer` needs to be installed in the current environment to support Kinc
 3. The output put will be in `data_afexplore_monomer_ADKopen/ADK`.
 4. It is flexible for user to adjust the AFEX optimizaiton-related parameters (e.g. learning rate) in `afexplore_optim.py` and `run_afexplore_optim.sh`.
 
-Note AFEX currently is compatible solely with AF-Monomer.
+
+### Additional Notes
+
+Kincore-standalone is also required when predicting human kinases. Simply, `hmmer` needs to be installed in the current environment to support Kincore. See [Kincore-standalone](https://github.com/vivekmodi/Kincore-standalone) for more info.
+
+Currently, AFEX is compatible with AF-Monomer.
 
 ## Reference
-Tengyu Xie, Zilin Song, Jing Huang. Conditioned Protein Structure Prediction. bioRxiv 2023.09.24.559171; doi: https://doi.org/10.1101/2023.09.24.559171.
+Tengyu Xie#, Zilin Song#, Jing Huang. **Conditioned Protein Structure Prediction**. bioRxiv 2023.09.24.559171; doi: https://doi.org/10.1101/2023.09.24.559171.
 
 ## Acknowledgements
 
@@ -45,5 +47,5 @@ Inspiration, code snippets, etc.
 
 * [AlphaFold](https://github.com/google-deepmind/alphafold)
 * [AFProfile](https://github.com/patrickbryant1/AFProfile)
-* [Kincore-standalone](https://github.com/vivekmodi/Kincore-standalone)
+
 
